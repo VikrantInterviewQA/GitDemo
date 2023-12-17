@@ -1,6 +1,8 @@
 package MySeleniumTest.MySeleniumTest;
 
+import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,17 +18,16 @@ public class AutoSuggestSelectBboxTest {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		// driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.get("https://www.bing.com/");
 
 		WebElement ele = driver.findElement(By.xpath("//textarea[@id='sb_form_q']"));
 		ele.click();
 		ele.sendKeys("dhoni");
 
-		List<WebElement> count = driver.findElements(By.xpath("//li[@class='sa_sg as_extra_pad']//div[@class='sa_tm']/span"));
+		List<WebElement> count = driver
+				.findElements(By.xpath("//li[@class='sa_sg as_extra_pad']//div[@class='sa_tm']/span"));
 
-		System.out.println("333333");
-		System.out.println("count is :" + count.size());
 		System.out.println("333333");
 		System.out.println("count is :" + count.size());
 
@@ -39,11 +40,11 @@ public class AutoSuggestSelectBboxTest {
 //			}
 //
 //		}
-		
+
 		for (WebElement dhoni : count) {
 			System.out.println(dhoni.getText());
 		}
-Thread.sleep(2000);
+		Thread.sleep(2000);
 		driver.quit();
 
 	}
