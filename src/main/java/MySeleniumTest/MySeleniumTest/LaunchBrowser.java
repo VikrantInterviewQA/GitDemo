@@ -27,6 +27,8 @@ public class LaunchBrowser {
 		driver.get("https://www.google.com/");
 		System.out.println("Title is :" + driver.getTitle());
 		System.out.println("URL is  :" + driver.getCurrentUrl());
+		System.out.println("Title is :" + driver.getTitle());
+		System.out.println("URL is  :" + driver.getCurrentUrl());
 		// System.out.println(driver.getPageSource());
 		driver.quit();
 

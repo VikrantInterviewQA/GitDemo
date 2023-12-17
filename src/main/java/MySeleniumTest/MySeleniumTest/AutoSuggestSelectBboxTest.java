@@ -27,6 +27,8 @@ public class AutoSuggestSelectBboxTest {
 
 		System.out.println("333333");
 		System.out.println("count is :" + count.size());
+		System.out.println("333333");
+		System.out.println("count is :" + count.size());
 
 //		for (WebElement dhoni : count) {
 //			System.out.println("Found search text is :"+dhoni.getText());
